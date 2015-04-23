@@ -1,6 +1,3 @@
-module.exports = function($scope) {
-	this.games = [
-		{name: "Mahjonguhh"}
-	];
-
+module.exports = function($scope, GameFactory) {
+	this.factory = GameFactory;
 };
