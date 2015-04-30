@@ -2,13 +2,13 @@ module.exports = function() {
 	var factory = {};
 
 	factory.games = [
-		{name: "Mahjonguhh", boardType: "Turtle", players: [
+		{name: "Mahjonguhh", boardType: "Turtle", state:"open", players: [
 			{name: "Suusj"}
 		]},
-		{name: "Mayhemaaa", boardType:"Turtle", players: [
+		{name: "Mayhemaaa", boardType:"Turtle", state: "playing", players: [
 			{name: "Suusj"}
 		]},
-		{name: "Oh Mah Yong", boardType:"Turtle", players: [
+		{name: "Oh Mah Yong", boardType:"Turtle", state : "open", players: [
 			{name: "Suusj"}
 		]}
 	];
@@ -20,7 +20,12 @@ module.exports = function() {
 	factory.joinGame = function(player, joinGame) {
 		for (game in factory.games) {
 			if(game.name == joinGame) {
-				game.players.push(player);
+				if(game.state == "open"){
+					game.players.push(player);
+				}else{
+					console.log("game closed")
+				}
+				break;
 			}
 		}; 
 	};

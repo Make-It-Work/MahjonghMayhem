@@ -42,7 +42,10 @@
 		   			</div>
 		   			<div class="span2">
 		   				</br>
-		   				<span class="fa fa-user-plus" style="font-size: 40px;"></span>
+		   				<span ng-if="game.state === 'open'"
+		   				class="fa fa-user-plus" style="font-size: 40px;"></span>
+		   				<h4 ng-if="game.state !== 'open'"
+		   				 style="font-size: 20px;">Game is {{game.state}}</h4>
 		   		</div>
    			</div>
    		</div>
