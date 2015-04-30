@@ -13,8 +13,11 @@ module.exports = function() {
 		]}
 	];
 
-	factory.addGame = function(name) {
-		factory.games.push({name: name});
+	factory.addGame = function(name, boardType) {
+		console.log("adding in factory");
+		console.log(name);
+		console.log(boardType);
+		factory.games.push({name: name, boardType: boardType, players: []});
 	};
 
 	factory.joinGame = function(player, joinGame) {

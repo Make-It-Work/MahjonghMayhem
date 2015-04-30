@@ -1,0 +1,26 @@
+<div class="modal" id="addGameModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+             <div class="modal-header">
+                  <button type="button" class="close close-btn" data-dismiss="addGameModal" aria-hidden="true">×</button>
+                   <h4 class="modal-title">Create a game</h4>
+             </div>
+             <div class="modal-body">
+                 <form class="form-horizontal" id="addgameform" style="z-index: auto">
+                 	<div class="control-group">
+                 		<label class="control-label" for="newGameName">Name</label>
+                 		<input type="text" id="newGameName" class="input-xlarge" name="newGameName" ng-model="game.name"/>
+                 	</div>
+                 	<div class="control-group">
+                 		<label class="control-label" for="newGameName">Board</label>
+                 		<input type="text" id="newGameName" class="input-xlarge" name="newGameName" ng-model="game.board"/>
+                 	</div>
+                 </form>
+             </div>
+             <div class="modal-footer">
+                  <button type="button" class="btn btn-default close-btn" data-dismiss="addGameModal" ng-click="cancel()">Close</button>
+                  <button type="button" class="btn btn-primary" ng-click="addGame()">Save changes</button>
+             </div>
+       </div>
+    </div>
+</div>
