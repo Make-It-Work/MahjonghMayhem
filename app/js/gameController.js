@@ -6,7 +6,7 @@ module.exports = function($scope, GameFactory, $modal) {
 		this.factory.addGame(name, board);
 	}
 
-	$scope.open = function (size) {
+	this.open = function (size) {
 
 	    var modalInstance = $modal.open({
 	      templateUrl: 'addgame.html',
