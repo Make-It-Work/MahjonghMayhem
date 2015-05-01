@@ -7,11 +7,11 @@ module.exports = function($scope, GameFactory, $modal) {
 	}
 
 	
-	this.open = function (size) {
+	this.showPlayers = function () {
 		console.log("...");
 	}
 
-this.showPlayers = function() {
+	this.open = function(size) {
 	    var modalInstance = $modal.open({
 	      templateUrl: 'addgame.html',
 	      controller: 'AddGameController',
@@ -26,7 +26,7 @@ this.showPlayers = function() {
 	    modalInstance.result.then(function (selectedItem) {
 	      $scope.selected = selectedItem;
 	    }, function () {
-	      $log.info('Modal dismissed at: ' + new Date());
+	      console.log('Modal dismissed at: ' + new Date());
 	    });
   	};
 
