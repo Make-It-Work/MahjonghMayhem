@@ -8,8 +8,6 @@ module.exports = function(GameFactory, $scope, $modalInstance) {
 		$scope.cancel = function() {
 			$modalInstance.dismiss('cancel');
 		}
-		$scope.game = {
-			name: 'test'
-		};
+		$scope.game = {};
 	
 }

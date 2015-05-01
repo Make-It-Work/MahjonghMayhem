@@ -6,8 +6,12 @@ module.exports = function($scope, GameFactory, $modal) {
 		this.factory.addGame(name, board);
 	}
 
+	
 	this.open = function (size) {
+		console.log("...");
+	}
 
+this.showPlayers = function() {
 	    var modalInstance = $modal.open({
 	      templateUrl: 'addgame.html',
 	      controller: 'AddGameController',
@@ -25,4 +29,6 @@ module.exports = function($scope, GameFactory, $modal) {
 	      $log.info('Modal dismissed at: ' + new Date());
 	    });
   	};
+
+  	$scope.playersTemplate = 'app/playersTemplate.html';
 };
