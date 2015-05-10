@@ -1,13 +1,13 @@
 require('angular/angular');
 
 var app = angular.module("Mahjongh",["ui.bootstrap"]);
-var gameFactory = require('./GameFactory');
-var gameController = require('./gameController');
+var gameFactory = require('./Game/GameFactory');
+var gameController = require('./Game/GameController');
 
 var userFactory = require('./User/UserFactory');
 var userController = require('./User/UserController');
 
-var addGameController = require('./AddGameModal');
+var addGameController = require('./Game/AddGameController');
 
 app.factory('GameFactory', gameFactory);
 app.controller('AddGameController', ['GameFactory', '$scope', '$modalInstance', addGameController]);

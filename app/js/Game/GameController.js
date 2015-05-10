@@ -1,11 +1,5 @@
 module.exports = function($scope, GameFactory, $modal) {
 	this.factory = GameFactory;
-
-	this.addGame = function(name, board) {
-		console.log("add game in controller");
-		this.factory.addGame(name, board);
-	}
-
 	
 	this.showPlayers = function () {
 		console.log("...");
