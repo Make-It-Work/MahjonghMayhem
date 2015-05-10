@@ -24,5 +24,12 @@ module.exports = function($scope, GameFactory, $modal) {
 	    });
   	};
 
+  	this.join = function(gameId) {
+  		var user = {
+  			name: "Suusj"
+  		};
+  		this.factory.joinGame(user, gameId);
+  	};
+
   	$scope.playersTemplate = 'app/playersTemplate.html';
 };
