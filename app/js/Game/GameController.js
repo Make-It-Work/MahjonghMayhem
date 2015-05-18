@@ -1,5 +1,12 @@
-module.exports = function($scope, GameFactory, $modal) {
+module.exports = function($scope, GameFactory, $modal, $http) {
 	this.factory = GameFactory;
+
+	$scope.getGames = function(gameFactory) {
+		$http.get("http://mahjongmayhem.herokuapp.com/games")
+    	.success(function(response) {
+    		gameFactory.loadGames(response);
+    	});
+	};
 	
 	this.showPlayers = function () {
 		console.log("...");
@@ -32,4 +39,8 @@ module.exports = function($scope, GameFactory, $modal) {
   	};
 
   	$scope.playersTemplate = 'app/playersTemplate.html';
+
+  	$scope.init = function() {
+  		$scope.getGames(GameFactory);
+  	}
 };

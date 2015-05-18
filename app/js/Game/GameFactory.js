@@ -1,22 +1,13 @@
 module.exports = function() {
 	var factory = {};
 
-	factory.games = [
-		{gameid: 1, name: "Mahjonguhh", boardType: "Turtle", state:"open", players: [
-			{name: "Suusj"}
-		]},
-		{gameid: 2, name: "Mayhemaaa", boardType:"Turtle", state: "playing", players: [
-			{name: "Suusj"}
-		]},
-		{gameid: 3, name: "Oh Mah Yong", boardType:"Turtle", state : "open", players: [
-			{name: "Suusj"}
-		]}
-	];
+	factory.games = [];
+
+	factory.loadGames = function(apiResponse) {
+		factory.games = apiResponse;
+	}
 
 	factory.addGame = function(object) {
-		console.log("adding in factory");
-		console.log(object.name);
-		console.log(object.board);
 		factory.games.push({name: object.name, boardType: object.board, players: [], state:"open"});
 	};
 
