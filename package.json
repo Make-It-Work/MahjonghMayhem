@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "karma start karma-config.js"
   },
   "author": "",
   "license": "ISC",
@@ -23,13 +23,11 @@
     "karma": "^0.12.31",
     "karma-browserify": "^4.1.2",
     "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.1.12",
     "karma-coverage": "^0.2.6",
     "karma-mocha": "^0.1.10",
     "karma-sinon": "^1.0.4",
     "mocha": "^2.2.5",
     "sinon": "^1.14.1"
-  },
-  "scripts": {
-    "test": "karma start karma-config.js"
   }
 }
