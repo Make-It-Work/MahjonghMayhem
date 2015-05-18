@@ -1,13 +1,11 @@
 module.exports = function($scope, GameFactory, $modal) {
 	this.factory = GameFactory;
-
-	this.addGame = function(name, board) {
-		console.log("add game in controller");
-		this.factory.addGame(name, board);
+	
+	this.showPlayers = function () {
+		console.log("...");
 	}
 
-	this.open = function (size) {
-
+	this.open = function(size) {
 	    var modalInstance = $modal.open({
 	      templateUrl: 'addgame.html',
 	      controller: 'AddGameController',
@@ -22,7 +20,16 @@ module.exports = function($scope, GameFactory, $modal) {
 	    modalInstance.result.then(function (selectedItem) {
 	      $scope.selected = selectedItem;
 	    }, function () {
-	      $log.info('Modal dismissed at: ' + new Date());
+	      console.log('Modal dismissed at: ' + new Date());
 	    });
   	};
+
+  	this.join = function(gameId) {
+  		var user = {
+  			name: "Suusj"
+  		};
+  		this.factory.joinGame(user, gameId);
+  	};
+
+  	$scope.playersTemplate = 'app/playersTemplate.html';
 };

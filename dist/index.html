@@ -3,10 +3,9 @@
 	<title>Welcome to Mahjongh</title>
 	<!-- The css is copied into dist/css/app.css by the copy task -->
 	<link rel="stylesheet" href="css/app.css"/>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
  </head>
+
  <body ng-controller="GameController as games" data-offset="80">
  	<div class="navbar navbar-fixed-top">
    		<div class="navbar-inner">
@@ -26,7 +25,7 @@
 	 			<h1> Kies een game! </h1>
 	 		</div>
 	 		<div class="span2">
-	 			<button class="btn btn-default" data-toggle="modal" data-target="#addGame" id="addGame"> Add game </button>
+	 			<button class="btn btn-default" ng-click="games.open()" id="addGame"> Add game </button>
 	 		</div>
  		</div>
    		<div ng-repeat="game in games.factory.games">
@@ -38,51 +37,21 @@
 		   			</div>
 		   			<div class="span2">
 		   				</br>
-		   				<span class="fa fa-group" style="font-size: 40px;">{{game.players.length}}</span>
+		   				<span class="fa fa-group" style="font-size: 40px;" popover-template="playersTemplate" popover-placement="right" popover-trigger="mouseenter" class="btn btn-default">{{game.players.length}}</span>
 		   			</div>
 		   			<div class="span2">
 		   				</br>
-		   				<span ng-if="game.state === 'open'"
-		   				class="fa fa-user-plus" style="font-size: 40px;"></span>
+		   				<span ng-if="game.state === 'open'" class="fa fa-user-plus" style="font-size: 40px;" ng-click="games.join(game.gameid)"></span>
 		   				<h4 ng-if="game.state !== 'open'"
 		   				 style="font-size: 20px;">Game is {{game.state}}</h4>
+		   			</div>
 		   		</div>
    			</div>
    		</div>
-
-   		<div class="modal" id="addGameModal">
-		    <div class="modal-dialog">
-		        <div class="modal-content">
-		             <div class="modal-header">
-		                  <button type="button" class="close close-btn" data-dismiss="addGameModal" aria-hidden="true">×</button>
-		                   <h4 class="modal-title">Modal title</h4>
-		             </div>
-		             <div class="modal-body">
-		                 ...
-		             </div>
-		             <div class="modal-footer">
-		                  <button type="button" class="btn btn-default close-btn" data-dismiss="addGameModal">Close</button>
-		                  <button type="button" class="btn btn-primary">Save changes</button>
-		             </div>
-		       </div>
-		    </div>
-		</div>
 	</div>
 
 
    	<script src="js/app.js"></script>
-   	<script>
-   		$(document).ready(function() {
-   			$("#addGame").click(function() {
-   				$("#addGameModal").show();
-   			});
-   			$('.close-btn').click(function() {
-   				$("#addGameModal").hide();
-   				$('body').removeClass('modal-open');
-				$('.modal-backdrop').remove();
-   			})
-   		})
-   	</script>
-
+   	<script src="vendor/ui-bootstrap-tpls-0.12.1.min.js"></script>
  </body>
 </html>
