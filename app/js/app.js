@@ -1,6 +1,26 @@
 require('angular/angular');
+require('angular-route/angular-route');
 
-var app = angular.module("Mahjongh",["ui.bootstrap"]);
+// Create your app
+var app = angular.module('Mahjongh', ['ui.bootstrap', 'ngRoute']);
+
+app.config(function($routeProvider) {
+	$routeProvider.
+		when('/auth', {
+			template: '<h1>Login page!</h1>',
+			controller: 'LoginController'
+		}).otherwise({
+			templateUrl: 'index.html'
+		});
+});
+
+app.
+  run(function($rootScope, $location) {
+    $rootScope.$on( "$routeChangeStart", function(event, next, current) {
+      console.log($location);
+    });
+  });
+
 var gameFactory = require('./Game/GameFactory');
 var gameController = require('./Game/GameController');
 
@@ -8,11 +28,15 @@ var userFactory = require('./User/UserFactory');
 var userController = require('./User/UserController');
 
 var addGameController = require('./Game/AddGameController');
+var loginController = require('./Login/LoginController');
 
 app.factory('GameFactory', gameFactory);
 app.controller('AddGameController', ['GameFactory', '$scope', '$modalInstance', addGameController]);
 app.controller('GameController', gameController);
 
 app.factory('UserFactory', userFactory);
-app.controller('UserController', ['$scope','$http','$q', userController]);
+app.controller('UserController', userController);
+app.controller('LoginController', loginController);
+
+
 

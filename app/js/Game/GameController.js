@@ -7,10 +7,6 @@ module.exports = function($scope, GameFactory, $modal, $http) {
     		gameFactory.loadGames(response);
     	});
 	};
-	
-	this.showPlayers = function () {
-		console.log("...");
-	}
 
 	this.open = function(size) {
 	    var modalInstance = $modal.open({
