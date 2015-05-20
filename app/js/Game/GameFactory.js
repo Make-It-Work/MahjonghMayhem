@@ -7,6 +7,10 @@ module.exports = function() {
 		factory.games = apiResponse;
 	}
 
+	factory.loadGame = function(apiResponse) {
+		console.log("haloooooooo")
+	}
+
 	factory.addGame = function(object) {
 		factory.games.push({name: object.name, boardType: object.board, players: [], state:"open"});
 	};

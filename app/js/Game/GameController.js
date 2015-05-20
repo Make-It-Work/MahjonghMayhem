@@ -12,6 +12,13 @@ module.exports = function($scope, GameFactory, $modal, $http) {
 		console.log("...");
 	}
 
+	this.getGame = function(gameId){		
+		$http.get("https://mahjongmayhem.herokuapp.com/games/5541fc5b1872631100678bb4/tiles")
+		.success(function(response) {
+    		gameFactory.loadGame(response);
+    	});
+	}
+
 	this.open = function(size) {
 	    var modalInstance = $modal.open({
 	      templateUrl: 'addgame.html',
