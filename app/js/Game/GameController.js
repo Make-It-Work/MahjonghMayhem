@@ -7,10 +7,6 @@ module.exports = function($scope, GameFactory, $modal, $http) {
     		gameFactory.loadGames(response);
     	});
 	};
-	
-	this.showPlayers = function () {
-		console.log("...");
-	}
 
 	this.getGame = function(gameId){		
 		$http.get("https://mahjongmayhem.herokuapp.com/games/5541fc5b1872631100678bb4/tiles")

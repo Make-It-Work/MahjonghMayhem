@@ -16,12 +16,11 @@ module.exports = function() {
 	};
 
 	factory.joinGame = function(player, joinGame) {
+		console.log(joinGame);
 		factory.games.forEach(function(game){
-			if(game.gameid == joinGame) {
+			if(game._id == joinGame) {
 				if(game.state == "open"){
 					game.players.push(player);
-				}else{
-					console.log("game closed")
 				}
 				return;
 			}

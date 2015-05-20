@@ -1,7 +1,7 @@
 module.exports = function(){
 	var factory = {};
 
-	factory.persons [
+	factory.persons = [
 		{name: 'Martijn', age:26, active:true},
 		{name:'Henk', age:43,active:true},
 		{name:'Piet', age:35, active:false}
