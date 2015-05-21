@@ -2,7 +2,7 @@ require('angular/angular');
 require('angular-route/angular-route');
 
 // Create your app
-var app = angular.module('Mahjongh', ['ui.bootstrap', 'ngRoute']);
+var app = angular.module('Mahjongh', ['ngRoute', 'ui.bootstrap']);
 
 app.config(function($routeProvider) {
 	$routeProvider.
@@ -10,7 +10,7 @@ app.config(function($routeProvider) {
 			template: '<h1>Login page!</h1>',
 			controller: 'LoginController'
 		}).otherwise({
-			templateUrl: 'index.html'
+			templateUrl: 'indexView.html'
 		});
 });
 
