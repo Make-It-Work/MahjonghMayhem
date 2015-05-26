@@ -1,6 +1,8 @@
 module.exports = function(){
 	var factory = {};
 
+	factory.currentUser = {};
+
 	factory.persons = [
 		{name: 'Martijn', age:26, active:true},
 		{name:'Henk', age:43,active:true},

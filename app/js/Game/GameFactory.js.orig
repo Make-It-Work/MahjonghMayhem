@@ -8,6 +8,7 @@ module.exports = function($http) {
 		factory.games = apiResponse;
 	}
 
+<<<<<<< HEAD
 	factory.loadGame = function(apiResponse) {
 		factory.game = apiResponse;
 		console.log("haloooooooo")
@@ -29,5 +30,7 @@ module.exports = function($http) {
 		});
 	};
 
+=======
+>>>>>>> 7f05807acf63c537635581654d33f6c2fd4af34a
 	return factory;
 }
