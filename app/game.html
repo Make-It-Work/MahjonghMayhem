@@ -1,0 +1,23 @@
+
+
+<div ng-controller="GameController as games" data-ng-init="initGame()" data-offset="80">
+	<div class="navbar navbar-fixed-top">
+   		<div class="navbar-inner">
+    		<div class="container">
+       			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+         			<span class="icon-bar"></span>
+         			<span class="icon-bar"></span>
+         			<span class="icon-bar"></span>
+       			</a>
+       			<a class="brand" href="../">Mayjongh Mayhem</a>
+       		</div>
+       	</div>
+   	</div>
+
+	<div class="container" style="padding-top: 80px;">
+    <h3>ballalalala</h3>
+		<div ng-repeat="game in games.factory.game">
+      <h1> Soort : {{game.tile.suit}} </h1>
+    </div>
+	</div>
+</div>

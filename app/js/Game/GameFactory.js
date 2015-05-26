@@ -2,12 +2,14 @@ module.exports = function() {
 	var factory = {};
 
 	factory.games = [];
+	factory.game=[];
 
 	factory.loadGames = function(apiResponse) {
 		factory.games = apiResponse;
 	}
 
 	factory.loadGame = function(apiResponse) {
+		factory.game = apiResponse;
 		console.log("haloooooooo")
 	}
 

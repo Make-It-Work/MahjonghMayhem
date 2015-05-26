@@ -9,7 +9,11 @@ app.config(function($routeProvider) {
 		when('/auth', {
 			template: '<h1>Login page!</h1>',
 			controller: 'LoginController'
-		}).otherwise({
+		}).
+		when('/game', {
+			templateUrl: 'game.html'
+		}).
+		otherwise({
 			templateUrl: 'indexView.html'
 		});
 });
