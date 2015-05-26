@@ -28,10 +28,14 @@ module.exports = function($scope, GameFactory, $modal, $http) {
   	};
 
   	this.join = function(gameId) {
-  		var user = {
-  			name: "Suusj"
-  		};
-  		this.factory.joinGame(user, gameId);
+  		$http.post("http://mahjongmayhem.herokuapp.com/games/" + gameId + "/players")
+  		.success(function(response) {
+  			console.log(response);
+  		})
+  		.error(function(response) {
+  			alert("You have to be logged in");
+  		});
+
   	};
 
   	$scope.playersTemplate = 'app/playersTemplate.html';
