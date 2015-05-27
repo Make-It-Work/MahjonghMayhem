@@ -8,12 +8,9 @@ module.exports = function($scope, GameFactory, $modal, $http) {
     	});
 	};
 
-	$scope.getGame = function(gameFactory){	
+	this.getGame = function(gameId){	
 	console.log("boejjaaa")	
-		$http.get("https://mahjongmayhem.herokuapp.com/games/5541fc5b1872631100678bb4/tiles")
-		.success(function(response) {
-    		gameFactory.loadGame(response);
-    	});
+		this.factory.loadGameTiles(gameId);
 	}
 
 	this.open = function(size) {
@@ -50,10 +47,5 @@ module.exports = function($scope, GameFactory, $modal, $http) {
 
   	$scope.init = function() {
   		$scope.getGames(GameFactory);
-  	}
-
-  	$scope.initGame = function(){
-  		console.log("pleaaasseee")
-  		$scope.getGame(GameFactory);
   	}
 };

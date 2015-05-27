@@ -2,15 +2,20 @@ module.exports = function($http) {
 	var factory = {};
 
 	factory.games = [];
-	factory.game=[];
+	factory.gameTiles=[];
 
 	factory.loadGames = function(apiResponse) {
 		factory.games = apiResponse;
 	}
 
-	factory.loadGame = function(apiResponse) {
-		factory.game = apiResponse;
-		console.log("haloooooooo")
+	factory.loadGameTiles = function(gameId) {
+		console.log("helloooo factory")
+		var url = "https://mahjongmayhem.herokuapp.com/games/"+gameId+"/tiles"
+		$http.get(url)
+		.success(function(response) {
+			console.log("yeaaaahhhhh")
+    		factory.gameTiles = response;
+    	});
 	}
 
 	factory.addGame = function(object) {

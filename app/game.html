@@ -1,6 +1,4 @@
-
-
-<div ng-controller="GameController as games" data-ng-init="initGame()" data-offset="80">
+<div ng-controller="GameController as games" data-ng-init="init()" data-offset="80">
 	<div class="navbar navbar-fixed-top">
    		<div class="navbar-inner">
     		<div class="container">
@@ -15,9 +13,8 @@
    	</div>
 
 	<div class="container" style="padding-top: 80px;">
-    <h3>ballalalala</h3>
-		<div ng-repeat="game in games.factory.game">
-      <h1> Soort : {{game.tile.suit}} </h1>
+		<div ng-repeat="game in games.factory.gameTiles">
+      <h5> Soort : {{game.tile.suit}} </h5>
     </div>
 	</div>
 </div>
