@@ -8,6 +8,10 @@ module.exports = function($scope, GameFactory, $modal, $http) {
     	});
 	};
 
+	this.getGame = function(gameId){	
+		this.factory.loadGameTiles(gameId);
+	}
+
 	this.open = function(size) {
 	    var modalInstance = $modal.open({
 	      templateUrl: 'addgame.html',
