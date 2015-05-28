@@ -13,8 +13,14 @@
    	</div>
 
 	<div class="container" style="padding-top: 80px;">
+    <div class="game">
+
+    </div>
+
+
 		<div ng-repeat="game in games.factory.gameTiles">
-      <h5> Soort : {{game.tile.suit}} </h5>
+      <!--<h5> Soort : {{game.xPos}} {{game.yPos}} {{game.zPos}}</h5>-->
+      <div class="tile-{{game.zPos}} tile-{{game.tile.suit}}-{{game.tile.name}}" style='margin-left:{{game.xPos*36}}; margin-top: {{game.yPos*45}};'> </div>
     </div>
 	</div>
 </div>

@@ -13,6 +13,7 @@ module.exports = function($http) {
 		$http.get(url)
 		.success(function(response) {
     		factory.gameTiles = response;
+    		console.log(factory.gameTiles[0]);
     	});
 	}
 
