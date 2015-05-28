@@ -5,22 +5,29 @@
                   <button type="button" class="close close-btn" data-dismiss="addGameModal" aria-hidden="true">×</button>
                    <h4 class="modal-title">Create a game</h4>
              </div>
-             <div class="modal-body">
-                 <form class="form-horizontal" id="addgameform" style="z-index: auto">
-                 	<div class="control-group">
-                 		<label class="control-label" for="newGameName">Name</label>
-                 		<input type="text" id="newGameName" class="input-xlarge" name="newGameName" ng-model="game.name"/>
-                 	</div>
-                 	<div class="control-group">
-                 		<label class="control-label" for="newGameName">Board</label>
-                 		<input type="text" id="newGameName" class="input-xlarge" name="newGameName" ng-model="game.board"/>
-                 	</div>
-                 </form>
-             </div>
-             <div class="modal-footer">
+             <div class="modal-body" style="background: #eee">
+                 <form ng-submit="addGame()" class="form-horizontal" id="addgameform" style="z-index: auto">
+                  <div class="control-group">
+                    <label class="control-label" for="newGameName">Board</label>
+                    <select t id="newGameName" class="input-xlarge" name="newGameName" ng-model="game.templateName">
+                      <option ng-repeat="template in getGameTemplates()" value="{{template}}">{{template}}</option>
+                    </select>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="minPlayers">Minimum amount of players</label>
+                    <input type="range" id="minPlayers" class="input-xlarge" name="minPlayers" ng-model="game.minPlayers" min="2" max="32" value="2" onchange="updateTextInput(this.value)"/>
+                    <input type="text" id="minPlayersVal" value="2">
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="maxPlayers">Maximum amount of players</label>
+                    <input type="range" id="maxPlayers" class="input-xlarge" name="maxPlayers" ng-model="game.maxPlayers" min="2" max="32" value="32" onchange="updateTextInput2(this.value)"/>
+                    <input type="text" id="maxPlayersVal" value="32">
+                  </div>
                   <button type="button" class="btn btn-default close-btn" data-dismiss="addGameModal" ng-click="cancel()">Close</button>
-                  <button type="button" class="btn btn-primary" ng-click="addGame()">Save changes</button>
+                  <input type="submit" class="btn btn-primary" value="Save game"/>
+                 </form>
              </div>
        </div>
     </div>
 </div>
+

@@ -31,9 +31,19 @@ module.exports = function($scope, GameFactory, $modal, $http) {
   		$http.post("http://mahjongmayhem.herokuapp.com/games/" + gameId + "/players")
   		.success(function(response) {
   			console.log(response);
+  			window.location.href="/";
   		})
-  		.error(function(response) {
-  			alert("You have to be logged in");
+  		.error(function(response, status) {
+  			console.log(response);
+  			console.log(status);
+  			if (status == 400) {
+  				if (response.message == "You are allready joined in this game.") {
+  					alert("You cannot join a game twice");
+  				}
+  				else {
+  					alert("You have to be logged in");
+  				}
+  			}
   		});
 
   	};
