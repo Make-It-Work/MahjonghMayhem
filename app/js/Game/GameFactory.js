@@ -9,11 +9,9 @@ module.exports = function($http) {
 	}
 
 	factory.loadGameTiles = function(gameId) {
-		console.log("helloooo factory")
 		var url = "https://mahjongmayhem.herokuapp.com/games/"+gameId+"/tiles"
 		$http.get(url)
 		.success(function(response) {
-			console.log("yeaaaahhhhh")
     		factory.gameTiles = response;
     	});
 	}

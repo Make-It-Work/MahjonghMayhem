@@ -9,7 +9,6 @@ module.exports = function($scope, GameFactory, $modal, $http) {
 	};
 
 	this.getGame = function(gameId){	
-	console.log("boejjaaa")	
 		this.factory.loadGameTiles(gameId);
 	}
 
