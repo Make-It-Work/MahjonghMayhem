@@ -63,7 +63,60 @@ module.exports = function($scope, GameFactory, $modal, $http) {
 
     this.isFreeTile = function(tile) {
       console.log('is this free?');
-      return true;
+      return this.isFreeOnTop(tile);
+    }
+    this.isFreeOnTop = function(tile) {
+      var free = true;
+      zPos = tile.zPos;
+      xPos = tile.xPos;
+      yPos = tile.yPos;
+      this.factory.gameTiles.forEach(function(tmpTile) {
+        if(!tmpTile.matched) {
+          if (tmpTile.xPos == xPos || tmpTile.xPos == xPos + 1 || tmpTile.xPos == xPos -1) {
+            console.log('same xPos');
+            if(tmpTile.yPos == yPos || tmpTile.yPos == yPos + 1 || tmpTile.yPos == yPos - 1) {
+              console.log('same yPos');
+              if(tmpTile.zPos > zPos) {
+                console.log('Higher zPos');
+                free = false;
+                return free;
+              }
+            }
+          }
+        }
+      });
+      if (!this.isFreeOnSide(tile)) {
+        free = false;
+      }
+      return free;
+    }
+    this.isFreeOnSide = function(tile) {
+      var free = true;
+      var left = false;
+      var right = false;
+      zPos = tile.zPos;
+      xPos = tile.xPos;
+      yPos = tile.yPos;
+      this.factory.gameTiles.forEach(function(tmpTile) {
+        if(!tmpTile.matched) {
+          if(tmpTile.yPos >= yPos -1 && tmpTile.yPos <= yPos +1) {
+            if(tmpTile.zPos >= zPos) {
+              if(tmpTile.xPos == xPos -2) {
+                console.log('adjacent tile left');
+                left = true;
+              }
+              else if (tmpTile.xPos == xPos + 2) {
+                console.log('adjacent tile right');
+                right = true;
+              }
+            }
+          }
+        }
+      });
+      if(left && right) {
+        free = false;
+      }
+      return free;
     }
 
   	this.join = function(gameId) {
