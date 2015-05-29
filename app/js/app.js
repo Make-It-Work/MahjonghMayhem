@@ -63,5 +63,3 @@ app.controller('UserController', userController);
 app.factory('LoginFactory', loginFactory);
 app.controller('LoginController', loginController);
 
-
-

@@ -19,8 +19,14 @@
 
 
 		<div ng-repeat="game in games.factory.gameTiles">
-      <!--<h5> Soort : {{game.xPos}} {{game.yPos}} {{game.zPos}}</h5>-->
-      <div class="tile-{{game.zPos}} tile-{{game.tile.suit}}-{{game.tile.name}}" style='margin-left:{{game.xPos*36}}; margin-top: {{game.yPos*45}};'> </div>
+      <!--<h5> Soort : {{game.xPos}} {{game.yPos}} {{game.zPos}}</h5>
+
+    -->
+      <div id="{{game._id}}"
+        ng-click="games.select(game)"
+        class="tile-{{game.zPos}} select-tile tile-{{game.tile.suit}}-{{game.tile.name}} {{game.class}}" 
+        style='margin-left:{{game.xPos*36}}; margin-top: {{game.yPos*45}};'> 
+      </div>
     </div>
 	</div>
 </div>
