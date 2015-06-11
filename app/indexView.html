@@ -29,7 +29,7 @@
    			<div class="well">
 	   			<div class="row">
 	   				<div class="span5">
-		   				<a ng-if="game.state !== 'open'" href="#/game" ng-click="games.getGame(game._id)"><h2> {{game.gameTemplate.id}} board </h2></a>
+		   				<a ng-if="game.state !== 'open'" ng-href="#/game/{{game.id}}" ><h2> {{game.gameTemplate.id}} board </h2></a>
 		   				<h2 ng-if="game.state === 'open'"> {{game.gameTemplate.id}} board </h2>
 		   				<h4> Created on: {{game.createdOn}} </h4>
 		   			</div>

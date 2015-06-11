@@ -21,8 +21,9 @@ app.config(function($routeProvider) {
 			template: '<h1>Login page!</h1>',
 			controller: 'LoginController'
 		}).
-		when('/game', {
-			templateUrl: 'game.html'
+		when('/game/:id', {
+			templateUrl: 'game.html',
+      controller: 'GameController'
 		}).
 		otherwise({
 			templateUrl: 'indexView.html'

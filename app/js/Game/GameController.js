@@ -1,7 +1,17 @@
-module.exports = function($scope, GameFactory, $modal, $http) {
+module.exports = function($scope, GameFactory, $modal, $http, $routeParams) {
+  var routeparams = $routeParams;
 	this.factory = GameFactory;
 
 	selectedTiles = [];
+
+  this.getGame = function(){  
+    var gameId = routeparams.id;
+    this.factory.loadGameTiles(gameId);
+  }
+
+  if(routeparams.id){
+    this.getGame();
+  }
 
 	$scope.getGames = function(gameFactory) {
 		$http.get("http://mahjongmayhem.herokuapp.com/games")
@@ -10,9 +20,6 @@ module.exports = function($scope, GameFactory, $modal, $http) {
     	});
 	};
 
-	this.getGame = function(gameId){	
-		this.factory.loadGameTiles(gameId);
-	}
 
 	this.open = function(size) {
 	    var modalInstance = $modal.open({
