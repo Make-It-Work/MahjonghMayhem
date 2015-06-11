@@ -1,0 +1,186 @@
+@import "http://fonts.googleapis.com/css?family=Crete+Round";
+@import 'variables.scss';
+@import 'bootswatch.scss';
+
+.testingClass {
+	background-color: green;
+}
+
+.selected {
+  	opacity: 0.9;
+	-webkit-box-shadow: -1px 1px 5px 9px rgba(0, 47, 0, 0.75);
+	-moz-box-shadow:    -1px 1px 5px 9px rgba(0, 47, 0, 0.75);
+	box-shadow:         -1px 1px 5px 9px rgba(0, 47, 0, 0.75);
+}
+
+.found-match {
+	display:none;
+}
+
+ .tile-0 {
+ 	width: 72px;
+ 	height: 90px;
+ 	z-index: 0;
+ 	background-color: white;
+ 	position: absolute;
+ 	transform: translate(0px, 0px);
+ }
+ .tile-1 {
+ 	width: 72px;
+ 	height: 90px;
+ 	z-index:20;
+ 	background-color: blue;
+ 	position: absolute;
+ 	transform: translate(-5px, -5px);
+ }
+ .tile-2 {
+ 	width: 72px;
+ 	height: 90px;
+ 	z-index:40;
+ 	background-color: purple;
+ 	position: absolute;
+ 	transform: translate(-10px, -10px);
+ }
+ .tile-3 {
+ 	width: 72px;
+ 	height: 90px;
+ 	z-index:60;
+ 	background-color: orange;
+ 	position: absolute;
+ 	transform: translate(-15px, -15px);
+ }
+  .tile-4 {
+ 	width: 72px;
+ 	height: 90px;
+ 	z-index:60;
+ 	background-color: orange;
+ 	position: absolute;
+ 	transform: translate(-20px, -20px);
+ }
+
+ .tile-Character-1 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') 0 0;
+ }
+ .tile-Character-2 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -73px 0;
+ }
+ .tile-Character-3 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -146px 0;
+ }
+ .tile-Character-4 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -219px 0;
+ }
+ .tile-Character-5 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -292px 0;
+ }
+ .tile-Character-6 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -365px 0;
+ }
+ .tile-Character-7 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -438px 0;
+ }
+ .tile-Character-8 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -511px 0;
+ }
+ .tile-Character-9 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -584px 0;
+ }
+  .tile-Bamboo-1 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') 0 -90px;
+ }
+ .tile-Bamboo-2 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -73px -90px;
+ }
+ .tile-Bamboo-3 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -146px -90px;
+ }
+ .tile-Bamboo-4 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -219px -90px;
+ }
+ .tile-Bamboo-5 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -292px -90px;
+ }
+ .tile-Bamboo-6 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -365px -90px;
+ }
+ .tile-Bamboo-7 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -438px -90px;
+ }
+ .tile-Bamboo-8 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -511px -90px;
+ }
+ .tile-Bamboo-9 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -584px -90px;
+ }
+  .tile-Circle-1 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') 0 -180px;
+ }
+ .tile-Circle-2 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -73px -180px;
+ }
+ .tile-Circle-3 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -146px -180px;
+ }
+ .tile-Circle-4 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -219px -180px;
+ }
+ .tile-Circle-5 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -292px -180px;
+ }
+ .tile-Circle-6 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -365px -180px;
+ }
+ .tile-Circle-7 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -438px -180px;
+ }
+ .tile-Circle-8 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -511px -180px;
+ }
+ .tile-Circle-9 {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -584px -180px;
+ }
+ .tile-Wind-North {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -657px 0;	
+ }
+ .tile-Wind-East {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -730px 0;
+ }
+ .tile-Wind-South {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -803px 0;
+ }
+ .tile-Wind-West {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -876px 0;
+ }
+ .tile-Dragon-Green {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -949px 0;
+ }
+ .tile-Season-Spring {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -657px 0;	
+ }
+ .tile-Season-Summer {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -730px -90px;
+ }
+ .tile-Season-Autumn {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -803px -90px;
+ }
+ .tile-Season-Winter {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -876px -90px;
+ }
+ .tile-Dragon-Red {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -949px -90px;
+ }
+.tile-Flower-Bamboo {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -657px -180px;	
+ }
+ .tile-Flower-Plum {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -730px -180px;
+ }
+ .tile-Flower-Orchid {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -803px -180px;
+ }
+ .tile-Flower-Chrysantememum {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -876px -180px;
+ }
+ .tile-Dragon-White {
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -949px -180px;
+ }
