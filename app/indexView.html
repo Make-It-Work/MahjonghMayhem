@@ -1,22 +1,4 @@
-<div class="navbar navbar-fixed-top" ng-controller="LoginController as loginCtrl">
-   		<div class="navbar-inner">
-    		<div class="container">
-       			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-         			<span class="icon-bar"></span>
-         			<span class="icon-bar"></span>
-         			<span class="icon-bar"></span>
-       			</a>
-       			<a class="brand" href="../">Mayjongh Mayhem</a>
-       			<ul class="nav pull-right">
-
-	       			<a ng-click="loginCtrl.logOut()" class="brand" ng-if="loginCtrl.userLoggedIn()">Log out</a>
-	       			<a href="http://mahjongmayhem.herokuapp.com/auth/avans?callbackUrl=http://localhost:8080/%23/auth" class="brand"	       				ng-if="!loginCtrl.userLoggedIn()">Log in</a>
-	       		</ul>
-       		</div>
-       		
-       	</div>
-   	</div>
- 	<div ng-controller="GameController as games" data-ng-init="init()" class="container" style="padding-top: 80px;">
+	<div ng-controller="GameController as games" data-ng-init="init()" class="container" style="padding-top: 80px;">
  		<div class="row">
  			<div class="span10">
 	 			<h1> Kies een game! </h1>
