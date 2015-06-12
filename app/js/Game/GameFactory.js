@@ -9,7 +9,7 @@ module.exports = function($http) {
 	}
 
 	factory.loadGameTiles = function(gameId) {
-		var url = "https://mahjongmayhem.herokuapp.com/games/"+gameId+"/tiles"
+		var url = "https://mahjongmayhem.herokuapp.com/games/"+gameId+"/tiles?matched=false"
 		$http.get(url)
 		.success(function(response) {
     		factory.gameTiles = response;
