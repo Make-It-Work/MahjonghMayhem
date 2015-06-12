@@ -7,6 +7,9 @@ var app = angular.module('Mahjongh', ['ngRoute', 'ui.bootstrap']);
 var gameFactory = require('./Game/GameFactory');
 var gameController = require('./Game/GameController');
 
+var playGameFactory = require('./Game/PlayGameFactory');
+var playGameController = require('./Game/PlayGameController');
+
 var userFactory = require('./User/UserFactory');
 var userController = require('./User/UserController');
 
@@ -23,7 +26,7 @@ app.config(function($routeProvider) {
 		}).
 		when('/game/:id', {
 			templateUrl: 'game.html',
-      controller: 'GameController'
+      controller: 'PlayGameController'
 		}).
 		otherwise({
 			templateUrl: 'indexView.html'
@@ -57,6 +60,9 @@ app.config(function ($httpProvider) {
 app.factory('GameFactory', gameFactory);
 app.controller('AddGameController', ['GameFactory', '$scope', '$modalInstance', '$http', addGameController]);
 app.controller('GameController', gameController);
+
+app.factory('PlayGameFactory', playGameFactory);
+app.controller('PlayGameController', playGameController);
 
 app.factory('UserFactory', userFactory);
 app.controller('UserController', userController);
