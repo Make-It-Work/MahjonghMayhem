@@ -13,7 +13,7 @@
 	   				<div class="span5">
 		   				<a ng-if="game.state !== 'open'" ng-href="#/game/{{game.id}}" ><h2> {{game.gameTemplate.id}} board </h2></a>
 		   				<h2 ng-if="game.state === 'open'"> {{game.gameTemplate.id}} board </h2>
-		   				<h4> Created on: {{game.createdOn}} </h4>
+		   				<h4> Created on: {{game.createdOn | date: 'dd-MM-yyyy'}} </h4>
 		   				<button ng-click="games.startGame(game._id)" value="Start game"> </button>
 		   			</div>
 		   			<div class="span2">
