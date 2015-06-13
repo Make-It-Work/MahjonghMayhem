@@ -1,9 +1,9 @@
 module.exports = function($scope, GameFactory, $modal, $http, $routeParams) {
-  var self = this;
-  var routeparams = $routeParams;
+  	var self = this;
+  	var routeparams = $routeParams;
 	self.factory = GameFactory;
-  var gameId;
-  var socket;
+  	var gameId;
+  	var socket;
 	selectedTiles = [];
 
 	$scope.getGames = function(gameFactory) {
@@ -29,11 +29,17 @@ module.exports = function($scope, GameFactory, $modal, $http, $routeParams) {
     modalInstance.result.then(function (selectedItem) {
       $scope.selected = selectedItem;
     }, function () {
-      console.log('Modal dismissed at: ' + new Date());
-    });
+	      console.log('Modal dismissed at: ' + new Date());
+	    });
 	};
 
-	
+	self.isOwner = function(game) {
+		if (game.createdBy._id === window.localStorage.getItem("username")) {
+			return true;
+		} else {
+			return false;
+		};
+	};
 
 	self.join = function(gameId) {
 		$http.post("http://mahjongmayhem.herokuapp.com/games/" + gameId + "/players")
@@ -55,19 +61,15 @@ module.exports = function($scope, GameFactory, $modal, $http, $routeParams) {
 		});
 	};
 
-  self.startGame = function(gameId) {
-    $http.post("http://mahjongmayhem.herokuapp.com/games/" + gameId + "/start")
-    .success(function(response) {
-      console.log(response);
-      window.location.href="/";
-    })
-  }
-
-	$scope.itemClicked = function ($index) {
-    $scope.selectedIndex = $index;
+	self.startGame = function(gameId) {
+	    $http.post("http://mahjongmayhem.herokuapp.com/games/" + gameId + "/start")
+	    .success(function(response) {
+	    	console.log(response);
+	    	window.location.href="/";
+	    })
 	}
 
 	$scope.init = function() {
 		$scope.getGames(GameFactory);
- 	}
+	}
 };
