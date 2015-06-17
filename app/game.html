@@ -1,14 +1,34 @@
-<div ng-controller="PlayGameController as game" data-ng-init="init()" data-offset="80">
-	<div class="container" style="padding-top: 80px;">
-    <div class="game">
-
+<div data-ng-init="init()" data-offset="80">
+  <div class="pull-left span4 well" style="padding-top: 80px;">
+    <div class="row">
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a role="tab">Players</a></li>
+        <li><a role="tab">Gamelog</a></li>
+      </ul>
     </div>
-		<div ng-repeat="tile in game.factory.gameTiles">
-      <div id="{{tile._id}}"
-        ng-click="game.select(tile)"
-        class="tile-{{tile.zPos}} select-tile tile-{{tile.tile.suit}}-{{tile.tile.name}} {{tile.class}}" 
-        style='margin-left:{{tile.xPos*36}}; margin-top: {{tile.yPos*45}};'> 
+    <div id="players">
+      <div ng-repeat="player in game.factory.players">
+        <div class="row">
+          <h5>{{player.name}}</h5>
+          <h6>{{player.numberOfMatches}} matches</h6>
+          <div id="last-matched">
+            <div class="tile span6 tile-{{player.lastMatch[0].tile.suit}}-{{player.lastMatch[0].tile.name}}" id="matched1"></div>
+            <div class="tile span6 tile-{{player.lastMatch[1].tile.suit}}-{{player.lastMatch[1].tile.name}}" id="matched2"></div>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+	<div class="container" style="padding-top: 80px;">
+    <div class="game">
+        <div ng-repeat="tile in game.factory.gameTiles">
+          <div id="{{tile._id}}"
+            ng-click="game.select(tile)"
+            class="tile-{{tile.zPos}} select-tile tile-{{tile.tile.suit}}-{{tile.tile.name}} {{tile.class}}" 
+            style='margin-left:{{tile.xPos*36}}; margin-top: {{tile.yPos*45}};'> 
+          </div>
+        </div>
+    </div>
+		
 	</div>
 </div>

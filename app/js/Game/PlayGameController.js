@@ -17,16 +17,27 @@ module.exports = function($scope, PlayGameFactory, $modal, $http, $routeParams) 
 	}
 
 	socket.on('match', function(data) {
-	    console.log(self.factory);
+	    console.log(JSON.stringify(data));
 
 	    for(var i = 0; i < self.factory.gameTiles.length; i++){
 		    var tile = self.factory.gameTiles[i];
-	    	if(data[0]._id == tile._id || data[1]._id == tile._id) {
-	    		console.log("Im the tile");
+	    	if(data[0]._id == tile._id) {
+	    		self.factory.players.forEach(function(player) {
+			    	if(data[0].match.foundBy === player._id) {
+			    		player.numberOfMatches = player.numberOfMatches + 1;
+			    		player.lastMatch[0] = tile;
+			    	}
+			    });
 	    		self.factory.gameTiles.splice(i, 1);
-	    		console.log(self.factory.gameTiles);
-	    		$scope.$apply();
-	    	}
+	    	} else if (data[1]._id == tile._id) {
+	    		self.factory.players.forEach(function(player) {
+			    	if(data[1].match.foundBy === player._id) {
+			    		player.lastMatch[1] = tile;
+			    	}
+			    });
+	    		self.factory.gameTiles.splice(i, 1);
+	    	};
+	    	$scope.$apply();
 	    }
 	});
 

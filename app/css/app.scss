@@ -17,11 +17,16 @@
 	display:none;
 }
 
- .tile-0 {
- 	width: 72px;
- 	height: 90px;
- 	z-index: 0;
+.tile {
+	width: 72px;
+ 	height: 90px; 	
  	background-color: white;
+}
+ .tile-0 {
+ width: 72px;
+ 	height: 90px; 	
+ 	background-color: white;
+ 	z-index: 0;
  	position: absolute;
  	transform: translate(0px, 0px);
  }
@@ -155,7 +160,7 @@
  	background:url('/vendor/Mahjong_sprite_sheet_2.png') -949px 0;
  }
  .tile-Season-Spring {
- 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -657px 0;	
+ 	background:url('/vendor/Mahjong_sprite_sheet_2.png') -657px -90px;	
  }
  .tile-Season-Summer {
  	background:url('/vendor/Mahjong_sprite_sheet_2.png') -730px -90px;

@@ -26,7 +26,7 @@ app.config(function($routeProvider) {
 		}).
 		when('/game/:id', {
 			templateUrl: 'game.html',
-      controller: 'PlayGameController'
+      controller: 'PlayGameController as game'
 		}).
 		otherwise({
 			templateUrl: 'indexView.html'
@@ -36,8 +36,6 @@ app.config(function($routeProvider) {
 app.
   run(function($rootScope, $location) {
     $rootScope.$on( "$routeChangeStart", function(event, next, current) {
-      console.log($location);
-      console.log(window.localStorage.getItem('username'));
     });
   });
 
