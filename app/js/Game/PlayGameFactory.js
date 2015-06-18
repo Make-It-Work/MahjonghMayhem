@@ -25,7 +25,6 @@ module.exports = function($http, $q) {
 	};
 
 	factory.getUnmatchedTiles = function(gameId) {
-		
 		return $q(function(resolve, reject) {
 			var url = "https://mahjongmayhem.herokuapp.com/games/"+gameId+"/tiles?matched=false";
 			$http.get(url)
@@ -38,7 +37,6 @@ module.exports = function($http, $q) {
 	};
 
 	factory.getAllTiles = function(gameId) {
-		
 		return $q(function(resolve, reject) {
 			var url = "https://mahjongmayhem.herokuapp.com/games/"+gameId+"/tiles";
 			$http.get(url)
@@ -51,7 +49,6 @@ module.exports = function($http, $q) {
 	};
 
 	factory.getPlayers = function(gameId) {
-		
 		return $q(function(resolve, reject) {
 			var url = "https://mahjongmayhem.herokuapp.com/games/"+gameId;
 			$http.get(url)
