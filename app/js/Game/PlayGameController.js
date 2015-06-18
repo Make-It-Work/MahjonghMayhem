@@ -11,7 +11,10 @@ module.exports = function($scope, PlayGameFactory, $modal, $http, $routeParams) 
 	    gameId = routeparams.id;
 	    self.factory.loadGameTiles(gameId);
 	    socket = io('http://mahjongmayhem.herokuapp.com?gameId=' + gameId);
-	    self.state = 'playing';
+	    $http.get('http://mahjongmayhem.herokuapp.com/games/'+ gameId)
+	    .success(function(data) {
+	    	self.state = data.state;
+	    })
 	}
 
 	if(routeparams.id){
