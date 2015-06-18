@@ -18,6 +18,7 @@ module.exports = function($scope, PlayGameFactory, $modal, $http, $routeParams) 
 
 	socket.on('match', function(data) {
 	    console.log(JSON.stringify(data));
+	    self.factory.gameLog.push(data[0]);
 
 	    for(var i = 0; i < self.factory.gameTiles.length; i++){
 		    var tile = self.factory.gameTiles[i];

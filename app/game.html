@@ -2,11 +2,12 @@
   <div class="pull-left span4 well" style="padding-top: 80px;">
     <div class="row">
       <ul class="nav nav-tabs">
-        <li role="presentation" class="active"><a role="tab">Players</a></li>
-        <li><a role="tab">Gamelog</a></li>
+        <span ng-repeat="tab in game.factory.tabs" class= "nav nav-tabs">
+          <li class="{{tab.class}} span2" ng-click="game.factory.switchTab(tab.text)"><a role="tab">{{tab.text}}</a></li>
+        </span>
       </ul>
     </div>
-    <div id="players">
+    <div id="players" ng-show="(game.factory.tabs[0].class === 'active')">
       <div ng-repeat="player in game.factory.players">
         <div class="row">
           <h5>{{player.name}}</h5>
@@ -16,6 +17,11 @@
             <div class="tile span6 tile-{{player.lastMatch[1].tile.suit}}-{{player.lastMatch[1].tile.name}}" id="matched2"></div>
           </div>
         </div>
+      </div>
+    </div>
+    <div id="gameLog" ng-show="(game.factory.tabs[1].class === 'active')">
+      <div ng-repeat="log in game.factory.gameLog | orderBy: 'match.foundOn' : true">
+        <b>{{log.match.foundOn | date: 'dd-MM-yyyy HH:mm:ss'}} </b>match by {{log.match.foundBy}}
       </div>
     </div>
   </div>
