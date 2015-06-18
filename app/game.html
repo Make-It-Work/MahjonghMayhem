@@ -26,7 +26,7 @@
     </div>
   </div>
 	<div class="container" style="padding-top: 80px;">
-    <div class="game">
+    <div class="game" ng-show="game.state === 'playing'">
         <div ng-repeat="tile in game.factory.gameTiles">
           <div id="{{tile._id}}"
             ng-click="game.select(tile)"
@@ -34,6 +34,9 @@
             style='margin-left:{{tile.xPos*36}}; margin-top: {{tile.yPos*45}};'> 
           </div>
         </div>
+    </div>
+    <div ng-show ="game.state === 'finished'">
+      <h1> The game has ended </h1>
     </div>
 		
 	</div>

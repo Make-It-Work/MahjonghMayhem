@@ -5,11 +5,13 @@ module.exports = function($scope, PlayGameFactory, $modal, $http, $routeParams) 
   	var gameId;
   	var socket;
 	selectedTiles = [];
+	var state;
 
 	self.getGame = function(){  
 	    gameId = routeparams.id;
 	    self.factory.loadGameTiles(gameId);
 	    socket = io('http://mahjongmayhem.herokuapp.com?gameId=' + gameId);
+	    self.state = 'playing';
 	}
 
 	if(routeparams.id){
@@ -41,6 +43,10 @@ module.exports = function($scope, PlayGameFactory, $modal, $http, $routeParams) 
 	    	$scope.$apply();
 	    }
 	});
+
+	socket.on('end', function(data) {
+		self.state = 'finished';
+	})
 
 	self.select = function(tile) {
 	    console.log('selected a tile');
