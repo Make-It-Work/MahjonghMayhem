@@ -56,7 +56,7 @@ module.exports = function($http, $q) {
 	    		factory.players = response.players;
 	    		factory.players.forEach(function(player) {
 	    			player.lastMatch = [];
-	    			player.numberOfMatches = player.numberOfMatches/2;
+	    			player.numberOfMatches = player.numberOfMatches;
 	    		});
 	    		resolve(factory.players);
 	    	});
@@ -91,7 +91,6 @@ module.exports = function($http, $q) {
 	};
 
 	factory.getGameLog = function (gameId) {
-
 		var newUrl = "https://mahjongmayhem.herokuapp.com/games/" + gameId +"/tiles/matches";
 		$http.get(newUrl)
 		.success(function(response) {

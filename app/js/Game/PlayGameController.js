@@ -23,7 +23,24 @@ module.exports = function($scope, PlayGameFactory, $modal, $http, $routeParams) 
 
 	socket.on('match', function(data) {
 	    console.log(JSON.stringify(data));
-	    self.factory.gameLog.push(data[0]);
+	    var matchTime = {
+			time: data[0].match.foundOn,
+			by: data[0].match.foundBy
+		};
+		var found = false;
+		self.factory.matchedTimes.forEach(function(mt) {
+			if (!found) {
+				if (mt.time == matchTime.time && mt.by == matchTime.by) {
+					found = true;
+				} else {
+					found = false;
+				}
+			}
+		});
+		if(!found) {
+			self.factory.gameLog.push(data[0]);
+		}
+		self.factory.matchedTimes.push(matchTime);
 
 	    for(var i = 0; i < self.factory.gameTiles.length; i++){
 		    var tile = self.factory.gameTiles[i];
