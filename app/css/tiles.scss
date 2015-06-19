@@ -6,46 +6,36 @@
 	width: 72px;
  	height: 90px; 	
  	background-color: white;
+ 	position: absolute;
+}
+.tile-display {
+	@extend .tile;
+	position: relative;
 }
  .tile-0 {
- width: 72px;
- 	height: 90px; 	
- 	background-color: white;
+ 	@extend .tile;
  	z-index: 0;
- 	position: absolute;
  	transform: translate(0px, 0px);
  }
  .tile-1 {
- 	width: 72px;
- 	height: 90px;
+ 	@extend .tile;
  	z-index:20;
- 	background-color: blue;
- 	position: absolute;
  	transform: translate(-5px, -5px);
  }
  .tile-2 {
- 	width: 72px;
- 	height: 90px;
+ 	@extend .tile;
  	z-index:40;
- 	background-color: purple;
- 	position: absolute;
  	transform: translate(-10px, -10px);
  }
  .tile-3 {
- 	width: 72px;
- 	height: 90px;
+ 	@extend .tile;
  	z-index:60;
- 	background-color: orange;
- 	position: absolute;
  	transform: translate(-15px, -15px);
  }
   .tile-4 {
- 	width: 72px;
- 	height: 90px;
- 	z-index:60;
- 	background-color: orange;
- 	position: absolute;
- 	transform: translate(-20px, -20px);
+ 	@extend .tile;
+ 	z-index:80;
+	transform: translate(-20px, -20px);
  }
 
  .tile-Character-1 {
@@ -174,3 +164,10 @@
  .tile-Dragon-White {
  	background:url('/vendor/Mahjong_sprite_sheet_2.png') -949px -180px;
  }
+
+ @mixin selected-glow($r, $g, $b) {
+ 	opacity: 0.9;
+	-webkit-box-shadow: -1px 1px 5px 9px rgba($r, $g, $b, 0.75);
+	-moz-box-shadow:    -1px 1px 5px 9px rgba($r, $g, $b, 0.75);
+	box-shadow:         -1px 1px 5px 9px rgba($r, $g, $b, 0.75);
+}
