@@ -1,4 +1,13 @@
-	<div ng-controller="GameController as games" data-ng-init="init()" class="container" style="padding-top: 80px;">
+	<div data-ng-init="init()" class="container" style="padding-top: 80px;">
+
+		<!-- <ul class="nav nav-pills">
+	      <li><a href="#typography">Typography</a></li>
+	      <li><a href="#navbar">Navbar</a></li>
+	      <li><a href="#buttons">Buttons</a></li>
+	      <li><a href="#forms">Forms</a></li>
+	      <li><a href="#tables">Tables</a></li>
+	      <li><a href="#miscellaneous">Miscellaneous</a></li>
+	    </ul> -->
  		<div class="row">
  			<div class="span10">
 	 			<h1> Kies een game! </h1>
@@ -11,7 +20,7 @@
    			<div class="well">
 	   			<div class="row">
 	   				<div class="span5">
-		   				<a ng-if="game.state !== 'open'" ng-href="#/game/{{game.id}}" ><h2> {{game.gameTemplate.id}} board </h2></a>
+		   				<a ng-if="game.state !== 'open'" ui-sref="playing({gameId: game.id})" ><h2> {{game.gameTemplate.id}} board </h2></a>
 		   				<h2 ng-if="game.state === 'open'"> {{game.gameTemplate.id}} board </h2>
 		   				<h4> Created on: {{game.createdOn | date: 'dd-MM-yyyy'}} </h4>
 		   				<button class="btn btn-primary" ng-click="games.startGame(game._id)" ng-if="games.isOwner(game) && game.state === 'open'">Start Game</button>

@@ -1,6 +1,6 @@
-module.exports = function($scope, PlayGameFactory, $modal, $http, $routeParams) {
+module.exports = function($scope, PlayGameFactory, $modal, $http, $stateParams) {
   	var self = this;
-  	var routeparams = $routeParams;
+  	var routeparams = $stateParams;
 	self.factory = PlayGameFactory;
   	var gameId;
   	var socket;
@@ -8,7 +8,7 @@ module.exports = function($scope, PlayGameFactory, $modal, $http, $routeParams) 
 	var state;
 
 	self.getGame = function(){  
-	    gameId = routeparams.id;
+	    gameId = routeparams.gameId;
 	    self.factory.loadGameTiles(gameId);
 	    socket = io('http://mahjongmayhem.herokuapp.com?gameId=' + gameId);
 	    $http.get('http://mahjongmayhem.herokuapp.com/games/'+ gameId)
@@ -17,7 +17,7 @@ module.exports = function($scope, PlayGameFactory, $modal, $http, $routeParams) 
 	    })
 	}
 
-	if(routeparams.id){
+	if(routeparams.gameId){
 	    self.getGame();
 	}
 

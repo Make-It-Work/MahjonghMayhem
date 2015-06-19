@@ -1,6 +1,6 @@
-module.exports = function($scope, GameFactory, $modal, $http, $routeParams) {
+module.exports = function($scope, GameFactory, $modal, $http, $stateParams) {
   	var self = this;
-  	var routeparams = $routeParams;
+  	var routeparams = $stateParams;
 	self.factory = GameFactory;
   	var gameId;
   	var socket;
