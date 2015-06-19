@@ -1,0 +1,16 @@
+@import "http://fonts.googleapis.com/css?family=Crete+Round";
+@import 'variables.scss';
+
+$blueDark: #2488A6;
+
+@import 'settings.scss';
+@import 'bootswatch.scss';
+@import 'tiles.scss';
+
+.selected {
+  	opacity: 0.9;
+	-webkit-box-shadow: -1px 1px 5px 9px rgba(36, 136, 166, 0.75);
+	-moz-box-shadow:    -1px 1px 5px 9px rgba(36, 136, 166, 0.75);
+	box-shadow:         -1px 1px 5px 9px rgba(36, 136, 166, 0.75);
+}
+

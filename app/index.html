@@ -1,8 +1,8 @@
 <html lang="en" ng-app="Mahjongh">
- <head>
+ <head ng-controller="LoginController as loginCtrl">
 	<title>Welcome to Mahjongh</title>
 	<!-- The css is copied into dist/css/app.css by the copy task -->
-	<link rel="stylesheet" href="css/app.css"/>
+	<link rel="stylesheet" href="css/{{loginCtrl.factory.style}}_app.css"/>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<script type="text/javascript">
 		function updateTextInput(val) {
@@ -12,6 +12,8 @@
 	    	document.getElementById('maxPlayersVal').value=val; 
 	    }
 	</script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<script src="http://mahjongmayhem.herokuapp.com/socket.io/socket.io.js"></script>
  </head>
 
@@ -26,9 +28,17 @@
        			</a>
        			<a class="brand" href="../">Mayjongh Mayhem</a>
        			<ul class="nav pull-right">
+       				<li class="dropdown">
+		            <a class="dropdown-toggle" data-toggle="dropdown">Switch style <b class="caret"></b></a>
+		            <ul class="dropdown-menu">
+		              <li ng-click="loginCtrl.switchStyle('green')"><a>Green</a></li>
+		              <li class="divider"></li>
+		              <li ng-click="loginCtrl.switchStyle('blue')"><a>Blue</a></li>
+		            </ul>
+		          </li>
 
-	       			<a ng-click="loginCtrl.logOut()" class="brand" ng-if="loginCtrl.userLoggedIn()">Log out</a>
-	       			<a href="http://mahjongmayhem.herokuapp.com/auth/avans?callbackUrl=http://localhost:8080/%23/auth" class="brand"	       				ng-if="!loginCtrl.userLoggedIn()">Log in</a>
+	       			<li><a ng-click="loginCtrl.logOut()" ng-if="loginCtrl.userLoggedIn()">Log out</a></li>
+	       			<li><a href="http://mahjongmayhem.herokuapp.com/auth/avans?callbackUrl=http://localhost:8080/%23/auth" ng-if="!loginCtrl.userLoggedIn()">Log in</a></li>
 	       		</ul>
        		</div>
        		

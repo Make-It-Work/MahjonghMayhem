@@ -1,6 +1,7 @@
 module.exports = function() {
 	var factory = {};
 
+	factory.style = 'green';
 	factory.loggedInUser = {};
 
 	factory.logIn = function(userName, token) {

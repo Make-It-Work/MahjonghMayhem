@@ -1,6 +1,7 @@
 module.exports = function($scope, LoginFactory, $http, $routeParams, $window, $location) {
 	this.factory = LoginFactory;
 	console.log(this.factory.loggedInUser.username);
+
 	if ($location.$$path == '/auth') {
 		console.log($routeParams);
 
@@ -25,5 +26,10 @@ module.exports = function($scope, LoginFactory, $http, $routeParams, $window, $l
 		console.log("uitloggen");
 		window.localStorage.removeItem("username");
 		window.localStorage.removeItem("token");
+	}
+
+	this.switchStyle = function(color) {
+		console.log("let's switch it up");
+		this.factory.style = color;
 	}
 }

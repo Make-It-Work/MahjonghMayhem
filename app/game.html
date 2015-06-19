@@ -25,9 +25,9 @@
       </div>
     </div>
   </div>
-	<div class="container" style="padding-top: 80px;">
-    <div class="game" ng-show="game.state === 'playing'">
-        <div ng-repeat="tile in game.factory.gameTiles">
+	<div class="container container-fluid" id="gamecontained" style="padding-top: 80px;">
+    <div class="game light-container" ng-show="game.state === 'playing'">
+        <div ng-repeat="tile in game.factory.gameTiles" class="">
           <div id="{{tile._id}}"
             ng-click="game.select(tile)"
             class="tile-{{tile.zPos}} select-tile tile-{{tile.tile.suit}}-{{tile.tile.name}} {{tile.class}}" 

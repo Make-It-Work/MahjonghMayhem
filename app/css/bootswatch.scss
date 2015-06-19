@@ -183,7 +183,7 @@ a {
   text-decoration: none; }
 
 a:hover {
-  color: #028d79;
+  color: $blueDark;
   text-decoration: underline; }
 
 .img-rounded {
@@ -2558,7 +2558,7 @@ input[type="button"].btn-block {
 .btn-primary {
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #016a5b;
+  background-color: $blueDark;
   background-image: -moz-linear-gradient(top, #017464, #015b4e);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#017464), to(#015b4e));
   background-image: -webkit-linear-gradient(top, #017464, #015b4e);
@@ -3333,7 +3333,7 @@ input[type="submit"].btn {
   min-height: 55px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #013435;
+  background-color: $blueDark;
   background-image: -moz-linear-gradient(top, #013435, #013435);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#013435), to(#013435));
   background-image: -webkit-linear-gradient(top, #013435, #013435);
@@ -4901,7 +4901,7 @@ div.subnav {
 .nav-tabs {
   border-color: transparent; }
   .nav-tabs > li > a {
-    background-color: #015b4e;
+    background-color: $blueDark;
     color: white; }
     .nav-tabs > li > a:hover {
       background-color: #013435;
@@ -5179,7 +5179,7 @@ input, textarea, select {
 
 .modal-header {
   padding: 12px 15px 6px;
-  background-color: #015b4e; }
+  background-color: $blueDark; }
 
 .modal-body,
 .modal-footer {
