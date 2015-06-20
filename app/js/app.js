@@ -34,7 +34,7 @@ app.controller('LoginController', loginController);
 
 app.config(function($stateProvider, $urlRouterProvider) {
     
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/all');
     
     $stateProvider
         // HOME STATES AND NESTED VIEWS ========================================
@@ -43,10 +43,34 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'indexView.html',
             controller: 'GameController as games'
         })
+        .state('gameList.all', {
+            url: 'all',
+            templateUrl: 'partials/allgames.html'
+        })
+        .state('gameList.join', {
+            url: 'joinable',
+            templateUrl: 'partials/joinable.html'
+        })
+        .state('gameList.joined', {
+            url: 'joined',
+            templateUrl: 'partials/joined.html'
+        })
+        .state('gameList.spectate', {
+            url: 'spectate',
+            templateUrl: 'partials/spectate.html'
+        })
         .state('playing', {
             url: '/game/:gameId',
             templateUrl: 'game.html',
             controller: 'PlayGameController as game'
+        })
+        .state('playing.play', {
+            url: '/game/:gameId/play',
+            templateUrl: 'partials/gameplay.html',
+        })
+        .state('playing.spectate', {
+            url: '/game/:gameId/spectate',
+            templateUrl: 'partials/gamespectate.html',
         })
         .state('authenticate', {
             url: '/auth?username&token',
@@ -60,21 +84,61 @@ app.config(function($stateProvider, $urlRouterProvider) {
         
 });
 
-// app.config(function($routeProvider) {
+app.filter('joinable', function() {
+    return function(games) {
+        var output = [];
 
-// 	$routeProvider.
-// 		when('/auth', {
-// 			template: '<h1>Login page!</h1>',
-// 			controller: 'LoginController'
-// 		}).
-// 		when('/game/:id', {
-// 			templateUrl: 'game.html',
-//       controller: 'PlayGameController as game'
-// 		}).
-// 		otherwise({
-// 			templateUrl: 'indexView.html'
-// 		});
-// });
+        angular.forEach(games, function(game) {
+            if(game.state === 'open') {
+                output.push(game);
+            };
+        });
+
+        return output;
+    }
+});
+
+app.filter('joined', function() {
+    return function(games) {
+        var output = [];
+
+        angular.forEach(games, function(game) {
+            var found = false;
+            angular.forEach(game.players, function(player) {
+                console.log(player._id + " " + window.localStorage.getItem('username'));
+                if (player._id === window.localStorage.getItem('username')) {
+                    found = true;
+                }
+            });
+            if(found) {
+                output.push(game);
+            }
+        });
+
+        return output;
+    }
+});
+
+app.filter('spectate', function() {
+    return function(games) {
+        var output = [];
+
+        angular.forEach(games, function(game) {
+            var found = false;
+            angular.forEach(game.players, function(player) {
+                console.log(player._id + " " + window.localStorage.getItem('username'));
+                if (player._id === window.localStorage.getItem('username')) {
+                    found = true;
+                }
+            });
+            if(!found && game.state === 'playing') {
+                output.push(game);
+            }
+        });
+
+        return output;
+    }
+});
 
 app.
   run(function($rootScope, $location) {

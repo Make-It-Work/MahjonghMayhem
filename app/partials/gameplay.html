@@ -1,0 +1,14 @@
+<div class="container container-fluid" id="gamecontained" style="padding-top: 80px;">
+    <div class="game light-container" ng-show="game.state === 'playing'">
+        <div ng-repeat="tile in game.factory.gameTiles" class="">
+          <div id="{{tile._id}}"
+            ng-click="game.select(tile)"
+            class="tile-{{tile.zPos}} select-tile tile-{{tile.tile.suit}}-{{tile.tile.name}} {{tile.class}}" 
+            style='margin-left:{{tile.xPos*36}}; margin-top: {{tile.yPos*45}};'> 
+          </div>
+        </div>
+    </div>
+    <div ng-show ="game.state === 'finished'">
+      <h1> The game has ended </h1>
+    </div>
+</div>
