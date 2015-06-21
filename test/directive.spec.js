@@ -13,9 +13,4 @@ describe("Test two", function(){
 		myScope = _$rootScope_.$new();
 		GameFactory = _GameFactory_;
 	}));
-
-	it('should test', function(){
-		
-	});
-
 });
