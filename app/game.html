@@ -13,8 +13,8 @@
           <h5>{{player.name}}</h5>
           <h6>{{player.numberOfMatches}} matches</h6>
           <div id="last-matched">
-            <div class="tile span6 tile-{{player.lastMatch[0].tile.suit}}-{{player.lastMatch[0].tile.name}}" id="matched1"></div>
-            <div class="tile span6 tile-{{player.lastMatch[1].tile.suit}}-{{player.lastMatch[1].tile.name}}" id="matched2"></div>
+            <div class="tile-display span6 tile-{{player.lastMatch[0].tile.suit}}-{{player.lastMatch[0].tile.name}}" id="matched1"></div>
+            <div class="tile-display span6 tile-{{player.lastMatch[1].tile.suit}}-{{player.lastMatch[1].tile.name}}" id="matched2"></div>
           </div>
         </div>
       </div>
@@ -25,19 +25,5 @@
       </div>
     </div>
   </div>
-	<div class="container" style="padding-top: 80px;">
-    <div class="game" ng-show="game.state === 'playing'">
-        <div ng-repeat="tile in game.factory.gameTiles">
-          <div id="{{tile._id}}"
-            ng-click="game.select(tile)"
-            class="tile-{{tile.zPos}} select-tile tile-{{tile.tile.suit}}-{{tile.tile.name}} {{tile.class}}" 
-            style='margin-left:{{tile.xPos*36}}; margin-top: {{tile.yPos*45}};'> 
-          </div>
-        </div>
-    </div>
-    <div ng-show ="game.state === 'finished'">
-      <h1> The game has ended </h1>
-    </div>
-		
-	</div>
+  <div ui-view></div>
 </div>

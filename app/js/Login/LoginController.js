@@ -1,14 +1,14 @@
-module.exports = function($scope, LoginFactory, $http, $routeParams, $window, $location) {
+module.exports = function($scope, LoginFactory, $http, $stateParams, $window, $location) {
 	this.factory = LoginFactory;
 	console.log(this.factory.loggedInUser.username);
+	var $routeParams = $stateParams;
+
 	if ($location.$$path == '/auth') {
-		console.log($routeParams);
 
-		this.factory.logIn($routeParams.username, $routeParams.token);
+		this.factory.logIn($location.search().username, $location.search().token);
 
-
-		window.localStorage.setItem("username", $routeParams.username);
-		window.localStorage.setItem("token", $routeParams.token);
+		window.localStorage.setItem("username", $location.search().username);
+		window.localStorage.setItem("token", $location.search().token);
 
 		$window.location.href = '/';
 	}
@@ -25,5 +25,10 @@ module.exports = function($scope, LoginFactory, $http, $routeParams, $window, $l
 		console.log("uitloggen");
 		window.localStorage.removeItem("username");
 		window.localStorage.removeItem("token");
+	}
+
+	this.switchStyle = function(color) {
+		console.log("let's switch it up");
+		this.factory.style = color;
 	}
 }
