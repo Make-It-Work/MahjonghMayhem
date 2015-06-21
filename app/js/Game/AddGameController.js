@@ -4,7 +4,10 @@ module.exports = function(GameFactory, $scope, $modalInstance, $http) {
 		console.log('getting templates');
 		$http.get('http://mahjongmayhem.herokuapp.com/gameTemplates')
 		.success(function (response) {
+			console.log("bijna foreach")
+			console.log(response);
 			response.forEach(function(template) {
+				console.log("toch niet")
 				gameTemplates.push(template._id);
 			});
 
@@ -20,9 +23,9 @@ module.exports = function(GameFactory, $scope, $modalInstance, $http) {
 			}).error(function(data, status, headers, config) {
 				console.log(data);
 				console.log(status);
-			});
-			
+			});			
 		};
+
 		$scope.cancel = function() {
 			$modalInstance.dismiss('cancel');
 		}
@@ -31,7 +34,7 @@ module.exports = function(GameFactory, $scope, $modalInstance, $http) {
 		}
 		$scope.game = {
 			templateName: "Shanghai",
-			minPlayers: "2",
+			minPlayers: "1",
 			maxPlayers: "32"
 		};
 	

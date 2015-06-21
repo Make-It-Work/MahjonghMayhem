@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js\Game\GameController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">js\Game\GameController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">36.11% <small>(13 / 36)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">7.14% <small>(1 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">36.11% <small>(13 / 36)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">js/Game/</a> &#187; GameController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = function($scope, GameFactory, $modal, $http, $routeParams) {
+  	var self = this;
+  	var routeparams = $routeParams;
+	self.factory = GameFactory;
+  	var gameId;
+  	var socket;
+	selectedTiles = [];
+&nbsp;
+	$scope.getGames = <span class="fstat-no" title="function not covered" >function(gameFactory) {</span>
+<span class="cstat-no" title="statement not covered" >		$http.get("http://mahjongmayhem.herokuapp.com/games")</span>
+    	.success(<span class="fstat-no" title="function not covered" >function(response) {</span>
+<span class="cstat-no" title="statement not covered" >    		gameFactory.loadGames(response);</span>
+    	});
+	};
+&nbsp;
+&nbsp;
+	self.open = <span class="fstat-no" title="function not covered" >function(size) {</span>
+<span class="cstat-no" title="statement not covered" >    var modalInstance = $modal.open({</span>
+      templateUrl: 'addgame.html',
+      controller: 'AddGameController',
+      size: size,
+      resolve: {
+        items: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >          return $scope.items;</span>
+        }
+      }
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    modalInstance.result.then(<span class="fstat-no" title="function not covered" >function (selectedItem) {</span></span>
+<span class="cstat-no" title="statement not covered" >      $scope.selected = selectedItem;</span>
+    }, <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >	      console.log('Modal dismissed at: ' + new Date());</span>
+	    });
+	};
+&nbsp;
+	self.isOwner = <span class="fstat-no" title="function not covered" >function(game) {</span>
+<span class="cstat-no" title="statement not covered" >		if (game.createdBy._id === window.localStorage.getItem("username")) {</span>
+<span class="cstat-no" title="statement not covered" >			return true;</span>
+		} else {
+<span class="cstat-no" title="statement not covered" >			return false;</span>
+		};
+	};
+&nbsp;
+	self.join = <span class="fstat-no" title="function not covered" >function(gameId) {</span>
+<span class="cstat-no" title="statement not covered" >		$http.post("http://mahjongmayhem.herokuapp.com/games/" + gameId + "/players")</span>
+		.success(<span class="fstat-no" title="function not covered" >function(response) {</span>
+<span class="cstat-no" title="statement not covered" >			console.log(response);</span>
+<span class="cstat-no" title="statement not covered" >			window.location.href="/";</span>
+		})
+		.error(<span class="fstat-no" title="function not covered" >function(response, status) {</span>
+<span class="cstat-no" title="statement not covered" >			console.log(response);</span>
+<span class="cstat-no" title="statement not covered" >			console.log(status);</span>
+<span class="cstat-no" title="statement not covered" >			if (status == 400) {</span>
+<span class="cstat-no" title="statement not covered" >				if (response.message == "You are allready joined in this game.") {</span>
+<span class="cstat-no" title="statement not covered" >					alert("You cannot join a game twice");</span>
+				}
+				else {
+<span class="cstat-no" title="statement not covered" >					alert("You have to be logged in");</span>
+				}
+			}
+		});
+	};
+&nbsp;
+	self.startGame = <span class="fstat-no" title="function not covered" >function(gameId) {</span>
+<span class="cstat-no" title="statement not covered" >	    $http.post("http://mahjongmayhem.herokuapp.com/games/" + gameId + "/start")</span>
+	    .success(<span class="fstat-no" title="function not covered" >function(response) {</span>
+<span class="cstat-no" title="statement not covered" >	    	console.log(response);</span>
+<span class="cstat-no" title="statement not covered" >	    	window.location.href="/";</span>
+	    })
+	}
+&nbsp;
+	$scope.init = <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >		$scope.getGames(GameFactory);</span>
+	}
+};</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jun 19 2015 14:54:04 GMT+0200 (West-Europa (zomertijd))</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

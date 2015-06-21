@@ -1,4 +1,4 @@
-require('angular/angular');
+/*require('angular/angular');*/
 require('angular-route/angular-route');
 
 // Create your app

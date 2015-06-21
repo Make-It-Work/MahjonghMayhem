@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js\Game\PlayGameFactory.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">js\Game\PlayGameFactory.js</span></h1>
+    <h2>
+        Statements: <span class="metric">1.27% <small>(1 / 79)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 18)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 23)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">1.27% <small>(1 / 79)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">js/Game/</a> &#187; PlayGameFactory.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//WEL ASYNC
+&nbsp;
+module.exports = <span class="fstat-no" title="function not covered" >function($http, $q) {</span>
+<span class="cstat-no" title="statement not covered" >	var factory = {};</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	factory.gameId;</span>
+<span class="cstat-no" title="statement not covered" >	factory.gameTiles = [];</span>
+<span class="cstat-no" title="statement not covered" >	factory.players = [];</span>
+<span class="cstat-no" title="statement not covered" >	factory.allTiles = [];</span>
+<span class="cstat-no" title="statement not covered" >	factory.gameLog = [];</span>
+<span class="cstat-no" title="statement not covered" >	factory.matchedTimes = [];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	factory.tabs = [{text: "Players", class: "active"}, {text: "Game Log", class: ""}];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	factory.loadGameTiles = <span class="fstat-no" title="function not covered" >function(gameId) {</span></span>
+<span class="cstat-no" title="statement not covered" >		factory.gameId = gameId;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var unmatchedPromise = factory.getUnmatchedTiles(gameId);</span>
+<span class="cstat-no" title="statement not covered" >		var allTilesPromise = factory.getAllTiles(gameId);</span>
+<span class="cstat-no" title="statement not covered" >		var playersPromise = factory.getPlayers(gameId);</span>
+		
+<span class="cstat-no" title="statement not covered" >		$q.all([unmatchedPromise, allTilesPromise, playersPromise]).then(<span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			factory.getLastMatch(gameId);</span>
+		});
+	};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	factory.getUnmatchedTiles = <span class="fstat-no" title="function not covered" >function(gameId) {</span></span>
+<span class="cstat-no" title="statement not covered" >		return $q(<span class="fstat-no" title="function not covered" >function(resolve, reject) {</span></span>
+<span class="cstat-no" title="statement not covered" >			var url = "https://mahjongmayhem.herokuapp.com/games/"+gameId+"/tiles?matched=false";</span>
+<span class="cstat-no" title="statement not covered" >			$http.get(url)</span>
+			.success(<span class="fstat-no" title="function not covered" >function(response) {</span>
+<span class="cstat-no" title="statement not covered" >				console.log('unmatched');</span>
+<span class="cstat-no" title="statement not covered" >	    		factory.gameTiles = response;</span>
+<span class="cstat-no" title="statement not covered" >	    		resolve(factory.gameTiles);</span>
+	    	});
+		});		
+	};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	factory.getAllTiles = <span class="fstat-no" title="function not covered" >function(gameId) {</span></span>
+<span class="cstat-no" title="statement not covered" >		return $q(<span class="fstat-no" title="function not covered" >function(resolve, reject) {</span></span>
+<span class="cstat-no" title="statement not covered" >			var url = "https://mahjongmayhem.herokuapp.com/games/"+gameId+"/tiles";</span>
+<span class="cstat-no" title="statement not covered" >			$http.get(url)</span>
+			.success(<span class="fstat-no" title="function not covered" >function(response) {</span>
+<span class="cstat-no" title="statement not covered" >				console.log('alltiles');</span>
+<span class="cstat-no" title="statement not covered" >	    		factory.allTiles = response;</span>
+<span class="cstat-no" title="statement not covered" >	    		resolve(factory.allTiles);</span>
+	    	});
+		});
+	};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	factory.getPlayers = <span class="fstat-no" title="function not covered" >function(gameId) {</span></span>
+<span class="cstat-no" title="statement not covered" >		return $q(<span class="fstat-no" title="function not covered" >function(resolve, reject) {</span></span>
+<span class="cstat-no" title="statement not covered" >			var url = "https://mahjongmayhem.herokuapp.com/games/"+gameId;</span>
+<span class="cstat-no" title="statement not covered" >			$http.get(url)</span>
+			.success(<span class="fstat-no" title="function not covered" >function(response) {</span>
+<span class="cstat-no" title="statement not covered" >	    		factory.players = response.players;</span>
+<span class="cstat-no" title="statement not covered" >	    		factory.players.forEach(<span class="fstat-no" title="function not covered" >function(player) {</span></span>
+<span class="cstat-no" title="statement not covered" >	    			player.lastMatch = [];</span>
+<span class="cstat-no" title="statement not covered" >	    			player.numberOfMatches = player.numberOfMatches;</span>
+	    		});
+<span class="cstat-no" title="statement not covered" >	    		resolve(factory.players);</span>
+	    	});
+		});
+	};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	factory.getLastMatch = <span class="fstat-no" title="function not covered" >function(gameId) {</span></span>
+<span class="cstat-no" title="statement not covered" >		var newUrl = "https://mahjongmayhem.herokuapp.com/games/" + gameId +"/tiles/matches";</span>
+<span class="cstat-no" title="statement not covered" >		$http.get(newUrl)</span>
+		.success(<span class="fstat-no" title="function not covered" >function(response) {</span>
+<span class="cstat-no" title="statement not covered" >			response.forEach(<span class="fstat-no" title="function not covered" >function(match) {</span></span>
+<span class="cstat-no" title="statement not covered" >				factory.players.forEach(<span class="fstat-no" title="function not covered" >function(player) {</span></span>
+<span class="cstat-no" title="statement not covered" >					if(player.lastMatchFoundOn === undefined) {</span>
+<span class="cstat-no" title="statement not covered" >						player.lastMatchFoundOn = "1900-01-01T00:00:00.119Z";</span>
+					}
+<span class="cstat-no" title="statement not covered" >					if(player._id === match.match.foundBy) {</span>
+<span class="cstat-no" title="statement not covered" >						if (player.lastMatchFoundOn &lt; match.match.foundOn) {</span>
+<span class="cstat-no" title="statement not covered" >							console.log("newer match");</span>
+<span class="cstat-no" title="statement not covered" >							player.lastMatchFoundOn = match.match.foundOn;</span>
+<span class="cstat-no" title="statement not covered" >							player.lastMatch[0] = match;</span>
+<span class="cstat-no" title="statement not covered" >							factory.allTiles.forEach(<span class="fstat-no" title="function not covered" >function(tile) {</span></span>
+<span class="cstat-no" title="statement not covered" >								if(tile.tile._id == match.tile._id) {</span>
+<span class="cstat-no" title="statement not covered" >									console.log('filling lastMatch');</span>
+<span class="cstat-no" title="statement not covered" >									player.lastMatch[1] = match;</span>
+								}
+							});
+						}
+					}
+				});
+			});
+		});
+	};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	factory.getGameLog = <span class="fstat-no" title="function not covered" >function (gameId) {</span></span>
+<span class="cstat-no" title="statement not covered" >		var newUrl = "https://mahjongmayhem.herokuapp.com/games/" + gameId +"/tiles/matches";</span>
+<span class="cstat-no" title="statement not covered" >		$http.get(newUrl)</span>
+		.success(<span class="fstat-no" title="function not covered" >function(response) {</span>
+<span class="cstat-no" title="statement not covered" >			console.log(response);</span>
+<span class="cstat-no" title="statement not covered" >			response.forEach(<span class="fstat-no" title="function not covered" >function(log) {</span></span>
+<span class="cstat-no" title="statement not covered" >				var matchTime = {</span>
+					time: log.match.foundOn,
+					by: log.match.foundBy
+				};
+<span class="cstat-no" title="statement not covered" >				var found = false;</span>
+<span class="cstat-no" title="statement not covered" >				factory.matchedTimes.forEach(<span class="fstat-no" title="function not covered" >function(mt) {</span></span>
+<span class="cstat-no" title="statement not covered" >					if (!found) {</span>
+<span class="cstat-no" title="statement not covered" >						if (mt.time == matchTime.time &amp;&amp; mt.by == matchTime.by) {</span>
+<span class="cstat-no" title="statement not covered" >							found = true;</span>
+						} else {
+<span class="cstat-no" title="statement not covered" >							found = false;</span>
+						}
+					}
+				});
+<span class="cstat-no" title="statement not covered" >				if(!found) {</span>
+<span class="cstat-no" title="statement not covered" >					factory.gameLog.push(log);</span>
+				}
+<span class="cstat-no" title="statement not covered" >				factory.matchedTimes.push(matchTime);</span>
+			});
+		});
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	factory.switchTab = <span class="fstat-no" title="function not covered" >function(clicked) {</span></span>
+<span class="cstat-no" title="statement not covered" >		if(clicked === 'Game Log') {</span>
+<span class="cstat-no" title="statement not covered" >			factory.getGameLog(factory.gameId);</span>
+<span class="cstat-no" title="statement not covered" >			factory.tabs[0].class = "";</span>
+<span class="cstat-no" title="statement not covered" >			factory.tabs[1].class = "active";</span>
+			
+		} else {
+<span class="cstat-no" title="statement not covered" >			factory.getLastMatch(factory.gameId);</span>
+<span class="cstat-no" title="statement not covered" >			factory.tabs[0].class = "active";</span>
+<span class="cstat-no" title="statement not covered" >			factory.tabs[1].class = "";</span>
+		}
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	return factory;</span>
+};</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jun 19 2015 14:54:04 GMT+0200 (West-Europa (zomertijd))</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

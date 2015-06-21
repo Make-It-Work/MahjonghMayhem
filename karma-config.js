@@ -8,6 +8,8 @@ module.exports = function (config) {
         frameworks: ['mocha', 'chai', 'sinon', 'browserify'],
         files: [
             'http://code.jquery.com/jquery-1.11.1.min.js',
+            'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js',
+            'app/vendor/ui-bootstrap-tpls-0.12.1.min.js',
             'app/**/*.js',
             // Angular-mocks moet na app.js geladen worden omdat daar angular in zit
             'node_modules/angular-mocks/angular-mocks.js',
